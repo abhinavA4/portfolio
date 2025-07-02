@@ -1,4 +1,5 @@
 import "./App.css";
+import Info from "./components/Info";
 import Projectx from "./components/Projectx";
 import TechStack from "./components/TechStack";
 
@@ -17,7 +18,7 @@ function App() {
       </div>
       <div className="element col-span-2 row-span-2 flex flex-col justify-center items-center"><TechStack/></div>
       <div className="element col-span-2 row-start-3">5</div>
-      <div className="element col-span-2 row-span-2">Info</div>
+      <div className="element col-span-2 row-span-2"><Info/></div>
       <div className="element ">7</div>
       <div className="element row-span-2">8</div>
       <div className="element col-span-4"><Projectx/></div>
