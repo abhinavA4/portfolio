@@ -8,12 +8,12 @@ function App() {
     <div className="p-5 grid gap-5 grid-cols-6 grid-rows-4 h-screen bg-black text-white">
       <div className="element row-span-2">1</div>
       <div className="element row-span-2">1.1</div>
-      <div className="element font-[Space_Grotesk] font-semibold flex flex-col justify-center items-center">
-        <div className="text-5xl">10+</div>
+      <div className="element font-[Space_Grotesk] font-semibold flex flex-col justify-center items-center p-4">
+        <div className="text-6xl">10+</div>
         <button className="shiny-text text-2xl">Projects</button>
       </div>
       <div className="element font-[Space_Grotesk] font-semibold flex flex-col justify-center items-center">
-        <div className="text-5xl ">02+</div>
+        <div className="text-6xl ">02+</div>
         <button className="shiny-text text-2xl">Year Expertise</button>
       </div>
       <div className="element col-span-2 row-span-2 flex flex-col justify-center items-center"><TechStack/></div>
