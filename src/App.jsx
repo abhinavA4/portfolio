@@ -1,28 +1,17 @@
 import "./App.css";
-import Info from "./components/Info";
-import Projectx from "./components/Projectx";
-import TechStack from "./components/TechStack";
 
 function App() {
   return (
-    <div className="p-5 grid gap-5 grid-cols-6 grid-rows-4 h-screen bg-black text-white">
-      <div className="element row-span-2">1</div>
-      <div className="element row-span-2">1.1</div>
-      <div className="element font-[Space_Grotesk] font-semibold flex flex-col justify-center items-center p-4">
-        <div className="text-6xl">10+</div>
-        <button className="shiny-text text-2xl">Projects</button>
-      </div>
-      <div className="element font-[Space_Grotesk] font-semibold flex flex-col justify-center items-center">
-        <div className="text-6xl ">02+</div>
-        <button className="shiny-text text-2xl">Year Expertise</button>
-      </div>
-      <div className="element col-span-2 row-span-2 flex flex-col justify-center items-center"><TechStack/></div>
-      <div className="element col-span-2 row-start-3">5</div>
-      <div className="element col-span-2 row-span-2"><Info/></div>
-      <div className="element ">7</div>
-      <div className="element row-span-2">8</div>
-      <div className="element col-span-4"><Projectx/></div>
-      <div className="element ">Contact</div>
+    <div className="bg-black min-h-screen sm:h-screen overflow-x-auto grid grid-cols-2 sm:grid-cols-17 sm:grid-rows-19 gap-3 p-3 text-white">
+      <div className="element col-span-2 row-span-5 sm:col-span-9 sm:row-span-5">1</div>
+      <div className="element row-span-5 sm:col-span-5 sm:row-span-5">2</div>
+      <div className="element row-span-8 row-start-40 sm:col-span-3 sm:row-span-8">3</div>
+      <div className="element col-span-2 row-span-5 sm:col-span-5 sm:row-span-5">4</div>
+      <div className="element col-span-2 row-span-8 sm:col-span-6 sm:row-span-8">5</div>
+      <div className="element row-span-8 col-start-2 row-start-40 sm:col-span-3 sm:row-span-8">6</div>
+      <div className="element row-span-5 col-start-2 row-start-6 sm:col-span-3 sm:row-span-5">7</div>
+      <div className="element col-span-2 row-span-9 sm:col-span-5 sm:row-span-9">8</div>
+      <div className="element col-span-2 row-span-6 sm:col-span-12 sm:row-span-6">9</div>
     </div>
   );
 }
