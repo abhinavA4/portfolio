@@ -1,19 +1,36 @@
-import "./App.css";
+// GithubCanvas.jsx
+import { useEffect, useRef } from "react";
+import { drawContributions, fetchGitHubContributions } from "github-contributions-canvas";
 
-function App() {
+function GithubCalendar({ username = "abhinavA4" }) {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    async function drawCanvas() {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const data = await fetchGitHubContributions(username); // ✅ Fetch the proper data
+
+      drawContributions(canvas, {
+        data, // ✅ Required!
+        username,
+        themeName: "standard",
+        footerText: `@${username} on GitHub`,
+      });
+    }
+
+    drawCanvas();
+  }, [username]);
+
   return (
-    <div className="bg-black  sm:h-screen overflow-y-auto min-h-[1200px] grid grid-cols-2 grid-rows-25 sm:grid-cols-17 sm:grid-rows-19 gap-3 p-3 text-white">
-      <div className="element row-span-3 row-start-8 col-span-2 sm:col-span-9 sm:row-span-5"></div>
-      <div className="element row-span-3 sm:col-span-5 sm:row-span-5">2</div>
-      <div className="element row-span-4 col-start-2 row-start-18 sm:row-span-8 sm:col-start-15 sm:col-span-3">3</div>
-      <div className="element row-span-3 col-span-2 sm:col-span-5 sm:row-span-5">4</div>
-      <div className="element row-span-4 col-start-1 row-start-1 col-span-2 sm:col-span-6 sm:row-span-8">5</div>
-      <div className="element row-span-4 sm:col-span-3 sm:row-span-8">6</div>
-      <div className="element row-span-3 col-start-2 row-start-5 sm:col-span-3 sm:row-span-5">7</div>
-      <div className="element row-span-4 col-span-2 sm:col-span-5 sm:row-span-9">8</div>
-      <div className="element row-span-4 col-span-2 row-start-11 sm:col-span-12 sm:row-span-6">9</div>
+    <div className="p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+      <h2 className="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">
+        GitHub Contributions
+      </h2>
+      <canvas ref={canvasRef} className="w-full max-w-full h-auto" />
     </div>
   );
 }
 
-export default App;
+export default GithubCalendar;
