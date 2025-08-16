@@ -1,36 +1,53 @@
-// GithubCanvas.jsx
-import { useEffect, useRef } from "react";
-import { drawContributions, fetchGitHubContributions } from "github-contributions-canvas";
+import './App.css'
+import { Socialbar } from './components/Socialbar'
+import { Tools } from './components/Tools'
 
-function GithubCalendar({ username = "abhinavA4" }) {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    async function drawCanvas() {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-
-      const data = await fetchGitHubContributions(username); // ✅ Fetch the proper data
-
-      drawContributions(canvas, {
-        data, // ✅ Required!
-        username,
-        themeName: "standard",
-        footerText: `@${username} on GitHub`,
-      });
-    }
-
-    drawCanvas();
-  }, [username]);
+function App() {
 
   return (
-    <div className="p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">
-        GitHub Contributions
-      </h2>
-      <canvas ref={canvasRef} className="w-full max-w-full h-auto" />
+    <div className='w-[800px] mx-auto p-4'>
+      <div className='flex flex-col gap-6'>
+        <div className='flex'>
+        <div>
+          <img src="imgg.jpeg" className='size-32' />
+        </div>
+        <div>
+          <h2>Elon Musk</h2>
+          <h3>Software Engineer</h3>
+          <Socialbar />
+        </div>
+      </div>
+
+      <div>
+        <h1>About Me.</h1>
+        <p>Hey! I'm Rinkit Adhana, an undergraduate computer science student and full-stack developer who loves turning ideas into real, working products.
+          I'm flexible working with any tech stack, though I prefer modern tools. I'm currently working with Next.js, Django, Express, and TypeScript.
+          I love contributing to open-source projects and have actively participated in multiple hackathons, where I collaborate, build, and solve real-world problems.</p>
+      </div>
+
+      <div>
+        <h1>Reach out to me.
+        </h1>
+        <p>Most of the time, you'll find me hanging out on my Discord channel while coding. I'm also super active on X, so feel free to DM me there or reach out to me via email if you have any queries.
+        </p>
+        <Socialbar />
+      </div>
+
+      <div>
+        <h1>Hire Me.
+        </h1>
+        <p>I’m currently available for internships, full-time opportunities, and freelance projects. If you’re looking for someone passionate, skilled, and ready to contribute, I’m here to help bring your ideas to life!
+
+        </p>
+        <Socialbar />
+      </div>
+      <div>
+        <h1>Skills & Tools</h1>
+        <Tools />
+      </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default GithubCalendar;
+export default App
